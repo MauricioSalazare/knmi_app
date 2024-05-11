@@ -27,6 +27,9 @@ def download_files(abs_path_download_folder: Union[str, Path], api_key:str, max_
     maximum_quota = max_downloads
 
     abs_path_download_folder_ = Path(abs_path_download_folder)
+
+    assert abs_path_download_folder_.exists(), f"Folder '{abs_path_download_folder_}' does not exist."
+
     last_file = sorted(abs_path_download_folder_.glob("*.nc"))[-1].stem
     max_date = filename_to_date(last_file)
     print(f"Max date found in folder: {max_date}")
