@@ -1,0 +1,17 @@
+name: knmi_api
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python>=3.9
+  - matplotlib
+  - numpy==1.19.*
+  - pandas==1.2.3
+  - scipy==1.5.*
+  - xarray==0.16.0
+  - netcdf4==1.5.*
+  - cftime
+  - pip
+  - requests
+  - tqdm==4.62.1
+  - geopandas

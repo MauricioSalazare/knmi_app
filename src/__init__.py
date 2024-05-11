@@ -1,1 +1,1 @@
-from .knmi import download_files
+from .knmi import download_files, merge_nc_files, KNMIApp
