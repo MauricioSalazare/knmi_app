@@ -190,6 +190,10 @@ def download_files(abs_path_download_folder: Union[str, Path], api_key:str, max_
         params={"maxKeys": max_keys,
                 "startAfterFilename": start_after_filename})
 
+    if list_files_response.status_code == 403:
+        print(f"Access denied. Quota exceeded")
+        return 0
+
     response = list_files_response.json()
     files_list = response.get('files')  # Name of the files available in the server
     data_frame = pd.DataFrame(files_list)
